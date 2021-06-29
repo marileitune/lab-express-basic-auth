@@ -68,6 +68,9 @@ router.post('/signin', (req, res, next) => {
                 res.render('auth/signin.hbs', {error: "User not found"})
             }
         })
+        .catch((err) => {
+            next(err)
+        })
 })
 
 router.get("/logout", (req, res, next)=>{
